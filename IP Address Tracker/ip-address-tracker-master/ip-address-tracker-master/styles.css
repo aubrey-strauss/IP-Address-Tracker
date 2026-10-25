@@ -1,8 +1,27 @@
-    .attribution {
-      font-size: 0.6875rem;
-      text-align: center;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.hero {
+  background-image: url("./images/pattern-bg-desktop.png");
+  background-size: cover;
+  background-position: center;
+  padding-top: 26px;
+  height: 280px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 100%;
+  color: white;
+}
+
+.search
