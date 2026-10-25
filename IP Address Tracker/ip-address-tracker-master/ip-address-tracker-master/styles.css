@@ -28,15 +28,13 @@ body {
   background-color: white;
   padding: 0 12px;
   border-radius: 15px;
-  gap:10px;
+  gap: 10px;
   height: 58px;
   align-items: center;
   display: flex;
   max-width: 555px;
   margin: 0 auto;
   margin-top: 24px;
-
-
 }
 
 .search-input {
@@ -45,15 +43,39 @@ body {
   font-size: 18px;
   font-family: inherit;
   border-radius: 15px;
-
 }
+
 .search-button {
   background-color: hsl(0, 0%, 17%);
   border: none;
   width: 58px;
   height: 58px;
   cursor: pointer;
-border-top-right-radius: 15px;
-border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
+.info-container {
+  display: flex;
+  background-color: white;
+  border-radius: 15px;
+  max-width: 1111px;
+  margin: 0 auto;
+  padding: 32px;
+  margin-top: -81px;
+  gap: 32px;
+}
+
+.result {
+  flex: 1;
+}
+
+.result-label {
+  font-weight: 400;
+  color: hsl(0, 0%, 58%);
+  font-size: 12px;
+}
+
+.result-value {
+  color: hsl(0, 0%, 17%);
+}
