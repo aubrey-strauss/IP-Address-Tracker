@@ -66,8 +66,16 @@ body {
   gap: 32px;
 }
 
+.divider {
+  width: 1px;
+  height: 81px;
+background-color: hsl(0, 0%, 58%);
+}
+
 .result {
   flex: 1;
+  gap: 32px;
+
 }
 
 .result-label {
@@ -78,4 +86,7 @@ body {
 
 .result-value {
   color: hsl(0, 0%, 17%);
+  padding-top: 16px;
+  display: flex;
+  gap: 32px;
 }
