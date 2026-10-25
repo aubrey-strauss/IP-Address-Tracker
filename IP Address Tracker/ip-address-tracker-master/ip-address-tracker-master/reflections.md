@@ -1,0 +1,1 @@
+I feel like I'm learning it all over again from square one and its truely sinking in.

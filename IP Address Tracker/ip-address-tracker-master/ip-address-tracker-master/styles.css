@@ -24,4 +24,36 @@ body {
   color: white;
 }
 
-.search
+.search {
+  background-color: white;
+  padding: 0 12px;
+  border-radius: 15px;
+  gap:10px;
+  height: 58px;
+  align-items: center;
+  display: flex;
+  max-width: 555px;
+  margin: 0 auto;
+  margin-top: 24px;
+
+
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  font-size: 18px;
+  font-family: inherit;
+  border-radius: 15px;
+
+}
+.search-button {
+  background-color: hsl(0, 0%, 17%);
+  border: none;
+  width: 58px;
+  height: 58px;
+  cursor: pointer;
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+}
+
