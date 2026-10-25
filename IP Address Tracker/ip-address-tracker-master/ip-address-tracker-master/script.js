@@ -5,6 +5,14 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+const locationIcon = L.icon({
+    iconUrl: './images/icon-location.svg',
+    iconSize: [46, 56],
+    iconAnchor: [23, 56]
+});
+
+const marker = L.marker([40.65, -73.95], { icon: locationIcon }).addTo(map);
+
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const ipText = document.getElementById('ip-address');
@@ -32,7 +40,7 @@ searchForm.addEventListener('submit', async function (event) {
     const lng = data.location.lng;
 
     map.setView([lat, lng], 13);
-    L.marker([lat, lng]).addTo(map);
+    marker.setLatLng([lat, lng]);
 
 });
 
