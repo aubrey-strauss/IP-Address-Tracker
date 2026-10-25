@@ -90,3 +90,7 @@ background-color: hsl(0, 0%, 58%);
   display: flex;
   gap: 32px;
 }
+
+#map {
+ height: 526px; 
+}
