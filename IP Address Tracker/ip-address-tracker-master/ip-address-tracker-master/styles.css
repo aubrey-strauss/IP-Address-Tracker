@@ -88,7 +88,6 @@ background-color: hsl(0, 0%, 58%);
 
 .result {
   flex: 1;
-
 }
 
 .result-label {
@@ -107,3 +106,32 @@ background-color: hsl(0, 0%, 58%);
 }
 
 /* ===== MOBILE LAYOUT ===== */
+/* Breakpoint with standard Apple mobile/iPad verticle layout */
+@media (max-width:768px) {
+  .hero {
+    background-image: url("./images/pattern-bg-mobile.png");
+    height: 300px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .search {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .info-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .divider {
+    display: none;
+  }
+}
