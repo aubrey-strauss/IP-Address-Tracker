@@ -1,7 +1,8 @@
 
 // ===== MAP SETUP =====
 // Create the map inside <div id="map"> and start it on a placeholder location
-const map = L.map('map');
+const map = L.map('map', {zoomControl: false }); // Don't add  the defaut zoom button that are hidden under info container
+L.control.zoom({ position: 'bottomright' }).addTo(map); // Move zoom buttons to make them visible
 map.setView([40.65, -73.95], 13);
 
 // Load the map pictures (tiles) from OpenStreetMap and credit them
