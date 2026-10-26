@@ -56,7 +56,16 @@ async function lookUpIp(ip) {
 
 searchForm.addEventListener('submit', function (event) {
     event.preventDefault();
+
+    const ip = searchInput.value.trim();
+
+    if (ip === '') {
+        errorText.textContent = "Please enter an IP address or domain.";
+        return;
+    }
+    
     lookUpIp(searchInput.value);
+
 });
 
 lookUpIp('');
