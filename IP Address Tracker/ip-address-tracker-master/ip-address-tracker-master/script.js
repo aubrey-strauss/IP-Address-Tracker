@@ -23,23 +23,35 @@ const errorText = document.getElementById('error-message');
 
 async function lookUpIp(ip) {
     let searchType = 'ipAddress';
-        if (/[a-z]/i.test(ip)) {
+    if (/[a-z]/i.test(ip)) {
         searchType = 'domain';
     }
     const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_UepZh7TYLH4vfu1YYy1zwqdBBuESc&${searchType}=${ip}`;
-    const response = await fetch(url);
-    const data = await response.json();
 
-    ipText.textContent = data.ip;
-    locationText.textContent = `${data.location.city}, ${data.location.region} ${data.location.postalCode}`;
-    timezoneText.textContent = `UTC ${data.location.timezone}`;
-    ispText.textContent = data.isp;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error('Not Found');
+        }
 
-    const lat = data.location.lat;
-    const lng = data.location.lng;
 
-    map.setView([lat, lng], 13);
-    marker.setLatLng([lat, lng]);
+        const data = await response.json();
+
+        ipText.textContent = data.ip;
+        locationText.textContent = `${data.location.city}, ${data.location.region} ${data.location.postalCode}`;
+        timezoneText.textContent = `UTC ${data.location.timezone}`;
+        ispText.textContent = data.isp;
+
+        const lat = data.location.lat;
+        const lng = data.location.lng;
+
+        map.setView([lat, lng], 13);
+        marker.setLatLng([lat, lng]);
+
+        errorText.textContent = '';
+    } catch (error) {
+        errorText.textContent = "Sorry, we couldn't find that IP address or domain. Please check it and try again.";
+    }
 }
 
 searchForm.addEventListener('submit', function (event) {
