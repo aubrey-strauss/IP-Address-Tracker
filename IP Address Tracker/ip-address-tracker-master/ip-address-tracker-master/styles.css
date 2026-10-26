@@ -1,3 +1,4 @@
+/* ===== RESET: remove browser default spacing ===== */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +8,7 @@
 body {
   font-family: "Rubik", sans-serif;
 }
-
+/* ===== HEADER ===== */
 .hero {
   background-image: url("./images/pattern-bg-desktop.png");
   background-size: cover;
@@ -23,7 +24,7 @@ body {
   line-height: 100%;
   color: white;
 }
-
+/* ===== SEARCH BAR ===== */
 .search {
   background-color: white;
   border-radius: 15px;
@@ -44,7 +45,7 @@ body {
   font-family: inherit;
   border-radius: 15px;
 }
-
+/* Hide the box around the text field; the whole bar gets an outline instead */
 .search-input:focus {
   outline: none;
 }
@@ -62,12 +63,12 @@ body {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-
+/* ===== ERROR MESSAGE ===== */
 .error-message {
   color: white;
   margin-top: 12px;
 }
-
+/* ===== RESULTS CARD (overlaps the header by 81px) ===== */
 .info-container {
   display: flex;
   background-color: white;
@@ -78,7 +79,7 @@ body {
   margin-top: -81px;
   gap: 32px;
 }
-
+/* Gray lines between results */
 .divider {
   width: 1px;
   height: 81px;
@@ -100,7 +101,9 @@ background-color: hsl(0, 0%, 58%);
   color: hsl(0, 0%, 17%);
   padding-top: 16px;
 }
-
+/* ===== MAP (needs a height or it's invisible) ===== */
 #map {
  height: 526px; 
 }
+
+/* ===== MOBILE LAYOUT ===== */
