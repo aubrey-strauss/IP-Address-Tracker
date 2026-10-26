@@ -19,10 +19,14 @@ const ipText = document.getElementById('ip-address');
 const locationText = document.getElementById('location');
 const timezoneText = document.getElementById('timezone');
 const ispText = document.getElementById('isp');
+const errorText = document.getElementById('error-message');
 
 async function lookUpIp(ip) {
-    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_UepZh7TYLH4vfu1YYy1zwqdBBuESc&ipAddress=${ip}`;
-
+    let searchType = 'ipAddress';
+        if (/[a-z]/i.test(ip)) {
+        searchType = 'domain';
+    }
+    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_UepZh7TYLH4vfu1YYy1zwqdBBuESc&${searchType}=${ip}`;
     const response = await fetch(url);
     const data = await response.json();
 

@@ -63,6 +63,11 @@ body {
   border-bottom-right-radius: 15px;
 }
 
+.error-message {
+  color: white;
+  margin-top: 12px;
+}
+
 .info-container {
   display: flex;
   background-color: white;
