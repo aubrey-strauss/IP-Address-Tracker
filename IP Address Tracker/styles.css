@@ -66,7 +66,11 @@ body {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-
+/* Add hover effect to search button */
+.search-button:hover {
+  background-color: hsl(0, 0%, 35%);
+}
+.search
 /* ===== ERROR MESSAGE ===== */
 .error-message {
   color: white;
@@ -155,4 +159,15 @@ main {
   .divider {
     display: none;
   }
+}
+
+/* ===== FOOTER ===== */
+.attribution {
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+}
+/* Make footer link bold when hovered */
+.attribution a:hover {
+  font-weight: 700;
 }
