@@ -70,7 +70,6 @@ body {
 .search-button:hover {
   background-color: hsl(0, 0%, 35%);
 }
-.search
 /* ===== ERROR MESSAGE ===== */
 .error-message {
   color: white;
