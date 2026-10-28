@@ -105,6 +105,8 @@ L.control.zoom({ position: 'bottomright' }).addTo(map);
 
 ### Useful resources
 
+- [My study guide](./study-guide.md) - Terms, concepts, and mistakes I kept track of while building this project.
+
 - [Frontend Mentor Pro](https://www.frontendmentor.io/pro) - The Figma design file let me match exact sizes, spacing, and colors instead of     guessing from the JPG designs.
 - [Claude](https://claude.ai) - Explained new terms in plain language, helped me debug, and checked my work as I built each part.
 - [Leaflet Quick Start Guide](https://leafletjs.com/examples/quick-start/) - How to add the map, tiles, and markers.
