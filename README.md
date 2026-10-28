@@ -8,6 +8,7 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
+  - [Project setup](#project-setup)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -39,19 +40,35 @@ Users should be able to:
 - Repository: [github.com/aubrey-strauss/IP-Address-Tracker](https://github.com/aubrey-strauss/IP-Address-Tracker)
 - Live site: [aubrey-strauss.github.io/IP-Address-Tracker](https://aubrey-strauss.github.io/IP-Address-Tracker/)
 
+
+## Project setup
+
+You don't need to install anything to run this project. Here's how I'd get it running:
+
+1. Clone the repo:
+   ```
+   git clone https://github.com/aubrey-strauss/IP-Address-Tracker.git
+   ```
+2. Open the project folder in VS Code.
+3. Right-click `index.html` and choose **Open with Live Server**.
+
+The page will load your own IP address and location right away. Type any IP address (like `8.8.8.8`) or domain (like `google.com`) in the search bar and press Enter to look it up.
+
+**A note about the API key:** I used a free IPify account, and my API key is in `script.js`. 
+
 ## My process
 
 **Planning and setup**
-- Created GitHub repo and downloaded Frontend's starter files.
+- Created GitHub repo and downloaded Frontend Mentor's starter files.
 
 **HTML**
 - Built the page structure before any styling.
 
 **CSS**
-- Styled one secion at a time, using the Figma design file for precise styling.
+- Styled one section at a time, using the Figma design file for precise styling.
 
 **JavaScript**
-- Coded the form notice a search, read what was typed, fetched data, filled in the card, moved the map and pin.
+- Coded the form to notice a search, read what was typed, fetch the data, fill in the card, and move the map and pin.
 - Added domain searches, form validation for empty searches, and error handling for bad addresses.
 
 **Throughout**
@@ -99,15 +116,15 @@ L.control.zoom({ position: 'bottomright' }).addTo(map);
 ### Continued development
 
 - Using console.log more efficiently.
-- Setting up projects cleanly from the start. I lost time fixing nested folders. in the future I will check with git rev-parse --show-toplevel before the first commit.
-- Reviewing more before committing. Running 'git diff' will help in the future. 
+- Setting up projects cleanly from the start. I lost time fixing nested folders. In, and put backticks around `git rev-parse --show-toplevel` before the first commit.
+- Reviewing more before committing. Running `git diff` will help in the future. 
 
 
 ### Useful resources
 
 - [My study guide](./study-guide.md) - Terms, concepts, and mistakes I kept track of while building this project.
 
-- [Frontend Mentor Pro](https://www.frontendmentor.io/pro) - The Figma design file let me match exact sizes, spacing, and colors instead of     guessing from the JPG designs.
+- [Frontend Mentor Pro](https://www.frontendmentor.io/pro) - The Figma design file let me match exact sizes, spacing, and colors instead of guessing from the JPG designs.
 - [Claude](https://claude.ai) - Explained new terms in plain language, helped me debug, and checked my work as I built each part.
 - [Leaflet Quick Start Guide](https://leafletjs.com/examples/quick-start/) - How to add the map, tiles, and markers.
 - [IPify API documentation](https://geo.ipify.org/docs) - The request format and what the response contains.
@@ -120,13 +137,13 @@ I used Claude as a tutor and debugging partner throughout this project.
 
 **How I used it:** 
 - **Learning terms and concepts.** I asked for plain-language explanations of new terms and why they're named what they are (like API, flexbox, async/await, regex, and z-index). Claude also kept a running study guide of everything I learned.
-- **Step-by-step guidance.** For the HTML and CSS, I got hints and wrote the code myself using the Figma design.
+- **Step-by-step guidance.** For most of the HTML and CSS, I got hints and wrote the code myself using the Figma design.
 - **Building the JavaScript.** Claude gave me example code for some steps I was confused on, written to connect to my own HTML: the ids and elements I'd already built, like search-form, search-input, and the four result fields. I typed each piece in myself, asked about anything I didn't understand, figured out where each line belonged, and tested every step in the browser Console before moving on.
 - **Debugging.** Claude looked at my running page and my GitHub repo to find bugs I couldn't see, such as script.js being in the wrong folder, my files being nested too deep for GitHub Pages, and a stray selector that turned my error message black.
 
 **What worked well:** Getting the "why" behind each line made concepts stick, and having bugs explained (not just fixed) taught me patterns I can spot on my own now.
 
-**What didn't:** Sometimes too much came at once, and I got confused about where code belonged. I prompted to be taught like a beginner and it helped to alieviate the difficulty. I also learned to watch VS Code's autocomplete, which incorrectly changed my code more than once and made it more confusing. 
+**What didn't:** Sometimes too much came at once, and I got confused about where code belonged. I prompted to be taught like a beginner and it helped to aleviate the difficulty. I also learned to watch VS Code's autocomplete, which incorrectly changed my code more than once and made it more confusing. 
 
 ## Author
 
