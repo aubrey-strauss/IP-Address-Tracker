@@ -16,10 +16,9 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
 
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
+
+IP Address Tracker is a web app that shows where an IP address or domain is located. When the page loads, it displays your own IP address, location, timezone, and internet provider, with your location pinned on an interactive map. You can search for any IP address or domain to see the same details and watch the map move to its location. The layout adjusts for desktop and mobile screens.
 
 ### The challenge
 
@@ -32,22 +31,32 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Desktop view](./screenshots/desktop.jpg)
+![Mobile view](./screenshots/mobile.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Repository: [github.com/aubrey-strauss/IP-Address-Tracker](https://github.com/aubrey-strauss/IP-Address-Tracker)
+- Live site: [aubrey-strauss.github.io/IP-Address-Tracker](https://aubrey-strauss.github.io/IP-Address-Tracker/)
 
 ## My process
+
+**Planning and setup**
+- Created GitHub repo and downloaded Frontend's starter files.
+
+**HTML**
+- Built the page structure before any styling.
+
+**CSS**
+- Styled one secion at a time, using the Figma design file for precise styling.
+
+**JavaScript**
+- Coded the form notice a search, read what was typed, fetched data, filled in the card, moved the map and pin.
+- Added domain searches, form validation for empty searches, and error handling for bad addresses.
+
+**Throughout**
+- Committed after each finished piece.
+- Kept a study guide of terms and mistakes as I went.
 
 ### Built with
 
@@ -63,33 +72,36 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
+**Layering elements with `position` and `z-index`**
 
+On mobile, the results card pushed the map down and left an empty gap behind it. I learned that elements normally take turns down the page, so the map couldn't start until the card ended. Giving the card `position: absolute` took it out of that order, so the map moved up underneath it, and `z-index` kept the card on top of the map.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+main {
+  position: relative;
+}
+
+.info-container {
+  position: absolute;
+  top: -81px;
+  z-index: 1001;
 }
 ```
+
+That fix caused a new problem: the card now covered the map's zoom buttons. I learned that Leaflet lets you turn off its default controls and place them yourself, so I moved them to the bottom-right corner.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const map = L.map('map', { zoomControl: false });
+L.control.zoom({ position: 'bottomright' }).addTo(map);
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- Using console.log more efficiently.
+- Setting up projects cleanly from the start. I lost time fixing nested folders. in the future I will check with git rev-parse --show-toplevel before the first commit.
+- Reviewing more before committing. Running 'git diff' will help in the future. 
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
@@ -104,7 +116,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 I used Claude as a tutor and debugging partner throughout this project.
 
-**How I used it:**
+**How I used it:** 
 - **Learning terms and concepts.** I asked for plain-language explanations of new terms and why they're named what they are (like API, flexbox, async/await, regex, and z-index). Claude also kept a running study guide of everything I learned.
 - **Step-by-step guidance.** For the HTML and CSS, I got hints and wrote the code myself using the Figma design.
 - **Building the JavaScript.** Claude gave me example code for some steps I was confused on, written to connect to my own HTML: the ids and elements I'd already built, like search-form, search-input, and the four result fields. I typed each piece in myself, asked about anything I didn't understand, figured out where each line belonged, and tested every step in the browser Console before moving on.
